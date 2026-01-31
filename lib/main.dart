@@ -48,9 +48,14 @@ class _MiniFormState extends State<MiniForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mini Form'),
+        centerTitle: true,
+        backgroundColor:  Colors.grey[100],
+        elevation: 1,
+        title: const Text('Mini Form', style: TextStyle(color: Colors.black),
+        ),
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -92,7 +97,13 @@ class _MiniFormState extends State<MiniForm> {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: _submitForm,
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                                            ),
+                                          ),
+            onPressed: _submitForm,
               child: const Text('Submit'),
             ),
             const SizedBox(height: 20),
@@ -109,8 +120,8 @@ class _MiniFormState extends State<MiniForm> {
                       const Text(
                         'Preview',
                         style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                       const SizedBox(height: 8),
